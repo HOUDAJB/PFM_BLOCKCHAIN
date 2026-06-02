@@ -1,0 +1,17 @@
+{
+  "name": "pfm-blockchain",
+  "version": "1.0.0",
+  "description": "Projet de Fin de Module – dApp TP3 Solidity, Truffle & ReactJS",
+  "scripts": {
+    "compile":    "truffle compile",
+    "migrate":    "truffle migrate --network development",
+    "update-env": "node update-env.js",
+    "deploy":     "truffle migrate --network development && node update-env.js",
+    "client":     "npm run dev --prefix client",
+    "start":      "npm run deploy && npm run client",
+    "test":       "truffle test"
+  },
+  "devDependencies": {
+    "truffle": "^5.11.5"
+  }
+}

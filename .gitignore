@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+client/node_modules/
+
+# Truffle build artifacts
+build/
+
+# Local env files
+.env
+.env*.local
+client/.env
+client/.env*.local
+
+# Logs and system files
+*.log
+.DS_Store
+Thumbs.db
