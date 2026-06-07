@@ -21,13 +21,13 @@ export default function Exercice3() {
   const [refresh, setRefresh] = useState(0)
   const [fnName,  setFnName]  = useState('')
 
-  const [msg,        setMsg]        = useState('Bonjour Solidity')
-  const [chaine1,    setChaine1]    = useState('Solidity')
-  const [chaine2,    setChaine2]    = useState(' et ReactJS')
-  const [autreChaine,setAutreChaine]= useState(' est génial')
-  const [longueurStr,setLongueurStr]= useState('Solidity')
-  const [cmpA,       setCmpA]       = useState('hello')
-  const [cmpB,       setCmpB]       = useState('hello')
+  const [msg,        setMsg]        = useState('')
+  const [chaine1,    setChaine1]    = useState('')
+  const [chaine2,    setChaine2]    = useState('')
+  const [autreChaine,setAutreChaine]= useState('')
+  const [longueurStr,setLongueurStr]= useState('')
+  const [cmpA,       setCmpA]       = useState('')
+  const [cmpB,       setCmpB]       = useState('')
 
   const notDeployed = !ADDRESS
 

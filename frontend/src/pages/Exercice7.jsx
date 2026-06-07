@@ -22,8 +22,8 @@ export default function Exercice7() {
   const [results, setResults] = useState({})
   const [refresh, setRefresh] = useState(0)
   const [fnName,  setFnName]  = useState('')
-  const [dx, setDx] = useState('1')
-  const [dy, setDy] = useState('1')
+  const [dx, setDx] = useState('')
+  const [dy, setDy] = useState('')
 
   const notDeployed = !ADDRESS
 

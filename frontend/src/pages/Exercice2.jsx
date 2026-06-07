@@ -13,8 +13,8 @@ const ABI = [
 
 export default function Exercice2() {
   const { call, loading, error } = useContract(ABI, ADDRESS)
-  const [etherVal, setEtherVal] = useState('1')
-  const [weiVal,   setWeiVal]   = useState('1000000000000000000')
+  const [etherVal, setEtherVal] = useState('')
+  const [weiVal,   setWeiVal]   = useState('')
   const [results,  setResults]  = useState({})
   const [refresh,  setRefresh]  = useState(0)
   const [fnName,   setFnName]   = useState('')

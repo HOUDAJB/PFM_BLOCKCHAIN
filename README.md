@@ -19,7 +19,7 @@ PFM_BlockChain/
 │   ├── Exercice7_Formes.sol    (Forme abstraite + Rectangle)
 │   └── Exercice8_Payment.sol
 ├── migrations/                 # Scripts de déploiement Truffle
-├── client/                     # Application React (Vite)
+├── frontend/                   # Application React (Vite)
 │   ├── src/
 │   │   ├── pages/              # 8 pages exercices + Home
 │   │   ├── components/         # BlockchainInfo, TransactionInfo, Header
@@ -44,8 +44,8 @@ PFM_BlockChain/
 # Dépendances Truffle (racine)
 npm install
 
-# Dépendances React (client)
-cd client && npm install && cd ..
+# Dépendances React (frontend)
+cd frontend && npm install && cd ..
 ```
 
 ### Étape 2 – Compiler les contrats
@@ -68,12 +68,12 @@ npm run migrate
 node update-env.js
 ```
 
-Ce script lit automatiquement `build/contracts/*.json` et remplit `client/.env` avec les adresses déployées.
+Ce script lit automatiquement `build/contracts/*.json` et remplit `frontend/.env` avec les adresses déployées.
 
 ### Étape 5 – Lancer le frontend
 
 ```bash
-cd client && npm run dev
+cd frontend && npm run dev
 ```
 
 Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur.
@@ -101,9 +101,9 @@ Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur.
 |----------|-------------|
 | `npm run compile` | Compile tous les contrats Solidity |
 | `npm run migrate` | Déploie sur Ganache |
-| `node update-env.js` | Met à jour client/.env avec les adresses |
+| `node update-env.js` | Met à jour frontend/.env avec les adresses |
 | `npm run deploy` | migrate + update-env en une commande |
-| `cd client && npm run dev` | Lance le serveur de développement React |
+| `cd frontend && npm run dev` | Lance le serveur de développement React |
 
 ---
 

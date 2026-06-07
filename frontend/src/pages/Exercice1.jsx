@@ -21,8 +21,8 @@ export default function Exercice1() {
   const [fnName, setFnName]   = useState('')
 
   // Inputs
-  const [a, setA] = useState('10')
-  const [b, setB] = useState('20')
+  const [a, setA] = useState('')
+  const [b, setB] = useState('')
   const [x, setX] = useState('')
   const [y, setY] = useState('')
 

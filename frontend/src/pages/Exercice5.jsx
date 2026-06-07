@@ -12,7 +12,7 @@ const ABI = [
 
 export default function Exercice5() {
   const { call, loading } = useContract(ABI, ADDRESS)
-  const [num,    setNum]    = useState('4')
+  const [num,    setNum]    = useState('')
   const [result, setResult] = useState(null)
   const [refresh,setRefresh]= useState(0)
   const [active, setActive] = useState('')

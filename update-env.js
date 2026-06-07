@@ -2,7 +2,7 @@
 /**
  * update-env.js
  * Lit les adresses déployées depuis build/contracts/*.json
- * et met à jour automatiquement client/.env
+ * et met à jour automatiquement frontend/.env
  *
  * Usage : node update-env.js
  */
@@ -21,7 +21,7 @@ const mapping = {
 }
 
 const buildDir = path.join(__dirname, 'build', 'contracts')
-const envFile  = path.join(__dirname, 'client', '.env')
+const envFile  = path.join(__dirname, 'frontend', '.env')
 
 if (!fs.existsSync(buildDir)) {
   console.error('❌  build/contracts not found – run: truffle migrate first')
@@ -45,11 +45,12 @@ for (const [contractName, envKey] of Object.entries(mapping)) {
     envContent += `${envKey}=\n`
     continue
   }
-  const latestNetwork = networks[keys[keys.length - 1]]
+  // Préférer le réseau 5777 (Ganache) s'il existe, sinon prendre le dernier
+  const latestNetwork = networks['5777'] || networks[keys[keys.length - 1]]
   const address = latestNetwork.address || ''
   envContent += `${envKey}=${address}\n`
   console.log(`✅  ${envKey} = ${address}`)
 }
 
 fs.writeFileSync(envFile, envContent)
-console.log(`\n📝  client/.env updated successfully!`)
+console.log(`\n📝  frontend/.env updated successfully!`)

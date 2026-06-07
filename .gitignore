@@ -1,6 +1,6 @@
 # Dependencies
 node_modules/
-client/node_modules/
+frontend/node_modules/
 
 # Truffle build artifacts
 build/
@@ -8,8 +8,8 @@ build/
 # Local env files
 .env
 .env*.local
-client/.env
-client/.env*.local
+frontend/.env
+frontend/.env*.local
 
 # Logs and system files
 *.log

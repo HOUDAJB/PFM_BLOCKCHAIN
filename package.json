@@ -7,7 +7,7 @@
     "migrate":    "truffle migrate --network development",
     "update-env": "node update-env.js",
     "deploy":     "truffle migrate --network development && node update-env.js",
-    "client":     "npm run dev --prefix client",
+    "client":     "npm run dev --prefix frontend",
     "start":      "npm run deploy && npm run client",
     "test":       "truffle test"
   },

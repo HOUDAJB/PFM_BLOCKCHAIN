@@ -17,7 +17,7 @@ const ABI = [
 export default function Exercice6() {
   const { call, send, loading, lastTx, error } = useContract(ABI, ADDRESS)
   const [newNum,   setNewNum]   = useState('')
-  const [index,    setIndex]    = useState('0')
+  const [index,    setIndex]    = useState('')
   const [results,  setResults]  = useState({})
   const [tableau,  setTableau]  = useState(null)
   const [refresh,  setRefresh]  = useState(0)
