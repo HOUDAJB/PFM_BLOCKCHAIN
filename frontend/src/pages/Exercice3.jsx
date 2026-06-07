@@ -77,7 +77,7 @@ export default function Exercice3() {
       <div className="card" style={{ marginBottom: 20 }}>
         <div className="section-header"><span className="section-dot" style={{ background: 'var(--color-warn)' }} /><h2>Opérations sur les chaînes</h2></div>
         
-        {/* Concatenation */}
+        {/* Concatenation Simple */}
         <div style={{ marginBottom: 20, paddingBottom: 16, borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
           <div className="form-grid">
             <div className="input-group">
@@ -90,10 +90,23 @@ export default function Exercice3() {
             </div>
           </div>
           <div className="btn-row">
-            <button className="btn btn-accent"   onClick={() => run('concat', 'concatener', [chaine1, chaine2], false, 'concatener(string,string)')} disabled={loading || notDeployed}>Concaténer</button>
-            <button className="btn btn-outline"  onClick={() => run('concat', 'concatenerAvec', [autreChaine], false, 'concatenerAvec(string)')} disabled={loading || notDeployed}>Concat. avec message</button>
+            <button className="btn btn-accent" onClick={() => run('concat', 'concatener', [chaine1, chaine2], false, 'concatener(string,string)')} disabled={loading || notDeployed}>Concaténer Chaîne 1 et 2</button>
           </div>
           {fmt('concat')}
+        </div>
+
+        {/* Concatenation Avec Message */}
+        <div style={{ marginBottom: 20, paddingBottom: 16, borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+          <div className="form-grid">
+            <div className="input-group" style={{ gridColumn: '1 / -1' }}>
+              <label>Autre Chaîne à ajouter au message stocké</label>
+              <input className="input" value={autreChaine} onChange={e => setAutreChaine(e.target.value)} placeholder="Ex: world" />
+            </div>
+          </div>
+          <div className="btn-row">
+            <button className="btn btn-outline" onClick={() => run('concatAvec', 'concatenerAvec', [autreChaine], false, 'concatenerAvec(string)')} disabled={loading || notDeployed}>Concaténer avec Message</button>
+          </div>
+          {fmt('concatAvec')}
         </div>
 
         {/* Longueur */}
