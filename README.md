@@ -35,48 +35,42 @@ PFM_BlockChain/
 ## 🚀 Démarrage rapide
 
 ### Prérequis
-- **Node.js** ≥ 18
-- **Ganache** (GUI ou CLI) démarré sur `http://127.0.0.1:7545`
+- **Node.js**
+- **Ganache** (GUI ou CLI) démarré sur le port `7545` (`http://127.0.0.1:7545`).
+- **Metamask** (Extension de navigateur) configuré avec le réseau Ganache.
 
 ### Étape 1 – Installer les dépendances
 
+À la racine du projet, installez les dépendances du backend (Truffle) puis du frontend (React) :
+
 ```bash
-# Dépendances Truffle (racine)
+# Dépendances à la racine
 npm install
 
-# Dépendances React (frontend)
+# Dépendances du frontend
 cd frontend && npm install && cd ..
 ```
 
-### Étape 2 – Compiler les contrats
+### Étape 2 – Lancer le projet (Déploiement + Frontend)
+
+Assurez-vous que Ganache est bien allumé, puis lancez cette commande **à la racine du projet** :
 
 ```bash
-npm run compile
+npm start
 ```
 
-### Étape 3 – Déployer sur Ganache
+Cette commande magique s'occupe de tout :
+1. Elle compile et déploie les contrats sur Ganache (`truffle migrate`).
+2. Elle récupère les adresses des contrats et met à jour le fichier `frontend/.env` automatiquement.
+3. Elle lance l'application React avec Vite.
 
-> ⚠️ Assurez-vous que Ganache est démarré sur le port **7545** avant cette étape.
+Ouvrez ensuite le lien fourni par Vite dans votre terminal (généralement [http://localhost:5173](http://localhost:5173)) dans votre navigateur.
 
-```bash
-npm run migrate
-```
-
-### Étape 4 – Mettre à jour les adresses dans le .env
-
-```bash
-node update-env.js
-```
-
-Ce script lit automatiquement `build/contracts/*.json` et remplit `frontend/.env` avec les adresses déployées.
-
-### Étape 5 – Lancer le frontend
-
-```bash
-cd frontend && npm run dev
-```
-
-Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur.
+> **Lancement manuel (optionnel)** :
+> Si vous souhaitez lancer les étapes séparément, vous pouvez utiliser :
+> `npm run compile` (pour compiler)
+> `npm run deploy` (pour déployer et màj les adresses)
+> `npm run client` (pour lancer le frontend)
 
 ---
 
